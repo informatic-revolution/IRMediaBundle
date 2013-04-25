@@ -1,0 +1,15 @@
+parameters:    
+    ir_media.resizer.simple.class: IR\MediaBundle\Resizer\SimpleResizer
+    ir_media.resizer.square.class: IR\MediaBundle\Resizer\SquareResizer
+      
+services:
+    ir_media.adapter.image.gd:
+        class: 'Imagine\Gd\Imagine'  
+  
+    ir_media.resizer.simple:
+        class: %ir_media.resizer.simple.class%
+        arguments: ['@ir_media.adapter.image.gd', %ir_media.resizer.simple.adapter.mode%]
+        
+    ir_media.resizer.square:
+        class: %ir_media.resizer.square.class%
+        arguments: ['@ir_media.adapter.image.gd', %ir_media.resizer.square.adapter.mode%]

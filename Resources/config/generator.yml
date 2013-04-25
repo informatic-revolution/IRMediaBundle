@@ -1,0 +1,6 @@
+parameters:               
+    ir_media.generator.default.class: IR\MediaBundle\Generator\DefaultGenerator
+      
+services:
+    ir_media.generator.default:
+        class: %ir_media.generator.default.class%

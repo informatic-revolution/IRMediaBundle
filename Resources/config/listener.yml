@@ -1,0 +1,9 @@
+parameters:               
+    ir_media.listener.media_event_subscriber.class: IR\MediaBundle\Listener\MediaEventSubscriber
+      
+services:
+    ir_media.listener.media_event_subscriber:
+        class: %ir_media.listener.media_event_subscriber.class%
+        arguments: ["@service_container"]
+        tags:
+            - { name: doctrine.event_subscriber }        

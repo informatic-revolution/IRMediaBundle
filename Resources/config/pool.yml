@@ -1,0 +1,7 @@
+parameters:     
+    ir_media.pool.class: IR\MediaBundle\Provider\Pool
+        
+services:
+    ir_media.pool:
+        class: %ir_media.pool.class%
+        arguments: [null]

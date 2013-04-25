@@ -1,0 +1,14 @@
+parameters:                    
+    ir_media.thumbnail.format.class: IR\MediaBundle\Thumbnail\FormatThumbnail           
+    ir_media.thumbnail.format.default: jpg
+                      
+    ir_media.thumbnail.liip_imagine.class: IR\MediaBundle\Thumbnail\LiipImagineThumbnail
+    
+services:
+    ir_media.thumbnail.format:
+        class: %ir_media.thumbnail.format.class%
+        arguments: [%ir_media.thumbnail.format.default%, '@ir_media.pool']     
+        
+    ir_media.thumbnail.liip_imagine:
+        class: %ir_media.thumbnail.liip_imagine.class%
+        arguments: ['@router']           

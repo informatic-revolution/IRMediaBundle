@@ -1,0 +1,8 @@
+parameters:
+    ir_media.model.media.class: IR\MediaBundle\Model\BaseMedia
+    ir_media.manager.media.class: IR\MediaBundle\Doctrine\MediaManager
+
+services:
+    ir_media.manager.media:
+        class: %ir_media.manager.media.class%
+        arguments: ['@doctrine.orm.entity_manager', %ir_media.model.media.class%]

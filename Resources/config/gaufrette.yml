@@ -1,0 +1,9 @@
+parameters:    
+                
+services:
+    ir_media.adapter.filesystem.local:
+        class: Gaufrette\Adapter\Local
+        
+    ir_media.filesystem.local:
+        class: Gaufrette\Filesystem
+        arguments: ['@ir_media.adapter.filesystem.local']

@@ -1,0 +1,61 @@
+parameters:                    
+    ir_media.provider.file.class: IR\MediaBundle\Provider\FileProvider
+    ir_media.provider.image.class: IR\MediaBundle\Provider\ImageProvider
+    ir_media.provider.youtube.class: IR\MediaBundle\Provider\YouTubeProvider
+                
+services:
+    ir_media.provider.file:
+        class: %ir_media.provider.file.class%
+        arguments: 
+            - null
+            - null
+            - null
+            - null
+            - null
+            - null
+            - null
+        calls:
+            - [ setTemplates, [ { helper_thumbnail: 'IRMediaBundle:Provider:thumbnail.html.twig', helper_view: 'IRMediaBundle:Provider:view_file.html.twig' } ] ]
+        tags:
+            - { name: ir_media.provider }   
+  
+    ir_media.provider.image:
+        class: %ir_media.provider.image.class%
+        arguments:
+            - null
+            - null
+            - null
+            - null
+            - null
+            - null
+            - null 
+            - null
+        calls:
+            - [ setTemplates, [ { helper_thumbnail: 'IRMediaBundle:Provider:thumbnail.html.twig', helper_view: 'IRMediaBundle:Provider:view_image.html.twig' } ] ]
+        tags:
+            - { name: ir_media.provider } 
+            
+    ir_media.provider.youtube:
+        class: %ir_media.provider.youtube.class%
+        arguments: 
+            - null
+            - null
+            - null
+            - null
+            - null
+            - '@ir_media.buzz.browser'
+        calls:
+            - [ setTemplates, [ { helper_thumbnail: 'IRMediaBundle:Provider:thumbnail.html.twig', helper_view: 'IRMediaBundle:Provider:view_youtube.html.twig' } ] ]
+        tags:
+            - { name: ir_media.provider }           
+            
+    ir_media.buzz.connector.file_get_contents:
+        class: 'Buzz\Client\FileGetContents' 
+       
+    ir_media.buzz.connector.curl:
+        class: 'Buzz\Client\Curl'
+        
+    ir_media.buzz.browser:
+        class: 'Buzz\Browser'
+        arguments:
+            - null          

@@ -1,0 +1,91 @@
+IR\MediaBundle\Entity\BaseMedia:
+    type: mappedSuperclass
+    
+    fields:
+        name:
+            column: name
+            type: string
+            length: 255
+            nullable: false
+            
+        description:
+            column: description
+            type: text
+            length: 1024
+            nullable: true
+            
+        providerName:
+            column: provider_name
+            type: string
+            length: 255
+            nullable: false
+            default: image
+            
+        providerReference:
+            column: provider_reference
+            type: string
+            length: 255
+            nullable: false  
+            
+        providerMetadata:
+            column: provider_metadata
+            type: array
+            nullable: true
+            
+        width:
+            column: width
+            type: integer
+            nullable: true
+            
+        height:
+            column: height
+            type: integer
+            nullable: true  
+            
+        length:
+            column: length
+            type: decimal
+            nullable: true
+            
+        contentType:
+            column: content_type
+            type: string
+            length: 64
+            nullable: true            
+
+        size:
+            column: content_size
+            type: integer
+            nullable: true
+            
+        copyright:
+            column: copyright
+            type: string
+            nullable: true 
+            
+        authorName:
+            column: author_name
+            type: string
+            nullable: true  
+            
+        context:
+            column: context
+            type: string
+            length: 50
+            nullable: true 
+            
+        createdAt:
+            column: created_at
+            type: datetime
+            nullable: false 
+            
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            
+    lifecycleCallbacks:
+        prePersist: [ prePersist ]
+        preUpdate:  [ preUpdate ]            
+            
+            

@@ -1,0 +1,27 @@
+{
+    "name": "ir/media-bundle",
+    "type": "symfony-bundle",
+    "description": "A bundle to manage photos, videos and other kind of media",
+    "keywords": ["Media management"],
+    "homepage": "https://github.com/informatic-revolution/IRMediaBundle", 
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julien Kirsch",
+            "email": "informatic.revolution@gmail.com"
+        }
+    ],    
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": ">=2.1,<2.3-dev",
+        "knplabs/gaufrette": ">=0.1.4",
+        "imagine/Imagine": "*@stable"  ,
+        "kriswallsmith/buzz": "0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "IR\\MediaBundle": ""
+        }
+    },
+    "target-dir": "IR/MediaBundle"
+}

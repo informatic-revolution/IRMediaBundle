@@ -1,0 +1,9 @@
+parameters:    
+    ir_media.twig.extension.class: IR\MediaBundle\Twig\Extension\MediaExtension
+                
+services:
+    ir_media.form.type.media:
+        class: %ir_media.twig.extension.class%
+        arguments: ['@ir_media.pool'] 
+        tags:
+            - { name: twig.extension }    

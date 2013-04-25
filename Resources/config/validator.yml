@@ -1,0 +1,17 @@
+#parameters:
+#    ir_media.validator.media.class: IR\MediaBundle\Validator\TestValidator
+        
+#services:  
+#    ir_media.validator.media:
+#        class: %ir_media.validator.media.class%
+#        tags:
+#           - { name: validator.constraint_validator, alias: ir_media_v }
+parameters:
+    irerp_hr_employee.validator.timetable_day_ranges.class: IR\MediaBundle\Validator\TimetableDayRangesValidator
+        
+services:  
+    irerp_hr_employee.validator.timetable_day_ranges:
+        class: %irerp_hr_employee.validator.timetable_day_ranges.class%
+        arguments: ['@ir_media.pool']
+        tags:
+            - { name: validator.constraint_validator, alias: irerp_hr_employee.validator.timetable_day_ranges }

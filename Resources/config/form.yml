@@ -1,0 +1,9 @@
+parameters:    
+    ir_media.form.type.image.class: IR\MediaBundle\Form\Type\ImageFormType
+                
+services:             
+    ir_media.form.type.image:
+        class: %ir_media.form.type.image.class%
+        arguments: ['@ir_media.pool', %ir_media.model.media.class%]
+        tags:
+            - { name: form.type, alias: ir_media_image_type }               

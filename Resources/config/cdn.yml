@@ -1,0 +1,7 @@
+parameters:    
+    ir_media.cdn.server.class: IR\MediaBundle\Cdn\Server
+                
+services:
+    ir_media.cdn.server:
+        class: %ir_media.cdn.server.class%
+        arguments: [null] 
