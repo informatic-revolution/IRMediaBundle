@@ -77,7 +77,7 @@ class MediaEventSubscriber implements EventSubscriber
             return;
         }
 
-        //$provider->transform($args->getEntity());
+        $provider->transform($args->getEntity());
     }
     
     /**
